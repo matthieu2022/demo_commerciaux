@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+a{ 
+    color: #009494;
+    font-weight: bolder;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+
+}
+
 :root {
     --primary: linear-gradient(135deg, #009494 0%, #308dc2 100%);
     --secondary: #f8fafc;
@@ -470,7 +479,7 @@ main {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #081a69 0%, #327c81 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

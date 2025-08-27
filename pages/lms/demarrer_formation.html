@@ -3,641 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bien démarrer sa formation - Académie du Tourisme</title>
+    <title>Tout savoir sur ma formation - Académie du Tourisme</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --accent: #4f46e5;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --info: #3b82f6;
-            --white-glass: rgba(255, 255, 255, 0.95);
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 2rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            background: var(--primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .header .subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .section {
-            background: var(--white-glass);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary);
-        }
-
-        .section h2 {
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .section h3 {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .welcome-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .welcome-card {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .welcome-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
-        }
-
-        .welcome-card .icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 auto 1rem;
-        }
-
-        .steps-timeline {
-            position: relative;
-            margin: 2rem 0;
-        }
-
-        .step {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
-
-        .step-content {
-            flex: 1;
-            padding-top: 0.5rem;
-        }
-
-        .step-content h4 {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-content p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 197, 253, 0.1) 100%);
-            border-left: 4px solid var(--info);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .warning-box {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(252, 211, 77, 0.1) 100%);
-            border-left: 4px solid var(--warning);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .success-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(110, 231, 183, 0.1) 100%);
-            border-left: 4px solid var(--success);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .objectives-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .objectives-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .objectives-list li:hover {
-            background: rgba(102, 126, 234, 0.1);
-            transform: translateX(5px);
-        }
-
-        .objectives-list li::before {
-            content: '✈️';
-            margin-right: 0.75rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .contact-method {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .contact-method:hover {
-            background: rgba(255, 255, 255, 0.95);
-            transform: translateY(-3px);
-        }
-
-        .contact-method .icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin: 0 auto 1rem;
-            font-size: 1.2rem;
-        }
-
-        .documents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .document-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .document-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
-        }
-
-        .document-card .icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin: 0 auto 1rem;
-            font-size: 1.3rem;
-        }
-
-        .document-card h4 {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .document-card p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .cta-section {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            border-radius: 15px;
-            padding: 2.5rem;
-            margin: 2rem 0;
-        }
-
-        .cta-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: white;
-            color: var(--accent);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .section {
-                padding: 1.5rem;
-            }
-            
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
-            
-            .documents-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Bien démarrer sa formation</h1>
-            <div class="subtitle">
-                <i class="fas fa-graduation-cap"></i>
-                Bienvenue à l'Académie du Tourisme
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>Académie du Tourisme</h1>
+                </div>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link" data-page="structure">Structure de nos Titres Pro</a></li>
+                    <li><a href="#" class="nav-link" data-page="campus">Campus & BTS Tourisme</a></li>
+                    <li><a href="#" class="nav-link" data-page="entreprise">Période en Entreprise</a></li>
+                    <li><a href="#" class="nav-link" data-page="fad">Espace FAD</a></li>
+                    <li><a href="#" class="nav-link" data-page="support">le support technique</a></li>
+                    <li><a href="#" class="nav-link active" data-page="info-formation">Tout savoir sur ma formation</a></li>
+                    <li><a href="#" class="nav-link" data-page="cas-concrets">Cas Concrets et Questions</a></li>
+                    <li><a href="#" class="nav-link" data-page="quiz">Quiz</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Section Bienvenue -->
-        <div class="section">
-            <h2><i class="fas fa-hand-wave"></i> Bienvenue dans votre parcours de formation !</h2>
-            <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">
-                Nous mettons tout en œuvre pour faciliter votre apprentissage et vous accompagner dans votre réussite.
-            </p>
-            
-            <div class="welcome-grid">
-                <div class="welcome-card">
-                    <div class="icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3>Livret d'accueil</h3>
-                    <p>Consultez votre livret d'accueil pour obtenir toutes les informations essentielles à votre formation en ligne.</p>
+    <main>
+        <div class="container">
+            <div id="info-formation" class="page active">
+                <div class="hero fade-in">
+                    <h2>Tout savoir sur ma formation</h2>
+                    <p>Découvrez toutes les informations essentielles pour réussir votre parcours de formation à l'Académie du Tourisme</p>
                 </div>
-                
-                <div class="welcome-card">
-                    <div class="icon">
-                        <i class="fas fa-universal-access"></i>
-                    </div>
-                    <h3>Accessibilité</h3>
-                    <p>Version accessible disponible avec audio pour les personnes en situation de handicap.</p>
-                </div>
-                
-                <div class="welcome-card">
-                    <div class="icon">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3>Règlement</h3>
-                    <p>Consultez le règlement intérieur FOAD et la charte d'utilisation de la plateforme.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Section Étapes du parcours -->
-        <div class="section">
-            <h2><i class="fas fa-route"></i> Les étapes de votre parcours</h2>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">
-                Découvrez les étapes de votre parcours, depuis votre arrivée sur la plateforme jusqu'à la certification.
-            </p>
-            
-            <div class="steps-timeline">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Entrée en formation</h4>
-                        <p>Découverte de votre plateforme et premier contact avec votre formateur à distance.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Accompagnement personnalisé</h4>
-                        <p>Suivi individuel et collectif tout au long de votre parcours de formation.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Préparation à l'examen</h4>
-                        <p>Training individuels et collectifs pour optimiser vos chances de réussite.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>Certification</h4>
-                        <p>Passage de votre examen et obtention de votre titre professionnel.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <!-- Section Bienvenue -->
+                <div class="section fade-in">
+                    <h2>Bienvenue à l'Académie du Tourisme</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Documents essentiels</h3>
+                            <ul>
+                                <li>Livret d'accueil (version accessible disponible)</li>
+                                <li>Règlement intérieur FOAD</li>
+                                <li>Charte d'utilisation plateforme</li>
+                            </ul>
+                        </div>
 
-        <!-- Section Formateur à distance -->
-        <div class="section">
-            <h2><i class="fas fa-user-graduate"></i> Votre formateur à distance</h2>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">
-                Pour suivre votre formation dans les meilleures conditions, vous êtes accompagné(e) par un formateur à distance, expert dans son domaine et pédagogue.
-            </p>
-            
-            <div class="info-box">
-                <h3><i class="fas fa-info-circle"></i> Exemple d'affectation par groupe</h3>
-                <p><strong>Vous faites partie du GROUPE 1, votre formateur est Gilles ROBERT</strong></p>
-                <p style="margin-top: 0.5rem; font-style: italic;">
-                    L'affichage du groupe et formateur se fait automatiquement selon votre affectation.
-                </p>
-            </div>
-            
-            <h3><i class="fas fa-phone"></i> Comment contacter votre formateur ?</h3>
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <div class="icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h4>Messagerie individuelle</h4>
-                    <p>Nom d'utilisateur : formateur1 RET</p>
-                </div>
-                
-                <div class="contact-method">
-                    <div class="icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4>Forums de discussion</h4>
-                    <p>Échanges collectifs et thématiques</p>
-                </div>
-                
-                <div class="contact-method">
-                    <div class="icon">
-                        <i class="fas fa-calendar"></i>
-                    </div>
-                    <h4>Rendez-vous planifiés</h4>
-                    <p>Via l'agenda de votre tableau de bord</p>
-                </div>
-                
-                <div class="contact-method">
-                    <div class="icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h4>Salle de visioconférence</h4>
-                    <p>Accès direct à la salle de votre formateur</p>
-                </div>
-            </div>
-        </div>
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h3>Premier contact</h3>
+                            <p>Rendez-vous individuel obligatoire dans les 7 jours avec votre formateur à distance pour découvrir la plateforme et recevoir toutes les informations de formation.</p>
+                        </div>
 
-        <!-- Section Premier RDV -->
-        <div class="section">
-            <h2><i class="fas fa-calendar-check"></i> Votre premier rendez-vous</h2>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
-                Un rendez-vous individuel avec votre formateur est organisé dans les <strong>7 jours</strong> qui suivent le démarrage de votre formation.
-            </p>
-            
-            <h3>🎯 Objectifs de ce premier RDV :</h3>
-            <ul class="objectives-list">
-                <li>Vous accompagner dans la découverte de la plateforme et de ses fonctionnalités</li>
-                <li>Vous communiquer toutes les informations relatives au déroulement de votre formation</li>
-                <li>Vous transmettre les noms et coordonnées de vos principaux interlocuteurs</li>
-                <li>Répondre à l'ensemble de vos questions</li>
-            </ul>
-            
-            <div class="warning-box">
-                <h3><i class="fas fa-exclamation-triangle"></i> Important</h3>
-                <p>Concernant la réservation de créneaux, <strong>il est de votre responsabilité</strong> de vous inscrire à ces créneaux sur l'agenda.</p>
-            </div>
-            
-            <h3>✏️ Comment préparer cet échange ?</h3>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
-                Pour préparer ce premier rendez-vous, nous vous proposons une activité originale pour faire connaissance.
-            </p>
-            
-            <div class="documents-grid">
-                <div class="document-card">
-                    <div class="icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Application mobile</h3>
+                            <p>Accédez à votre formation depuis votre smartphone via l'application Moodle. URL : https://learning-tourism.academy/</p>
+                        </div>
                     </div>
-                    <h4>Blason - Portrait chinois</h4>
-                    <p>Téléchargez et complétez ce document avant votre 1er entretien</p>
                 </div>
-                
-                <div class="document-card">
-                    <div class="icon">
-                        <i class="fas fa-upload"></i>
-                    </div>
-                    <h4>Espace de dépôt</h4>
-                    <p>Déposez votre blason complété dans cet espace</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Section Accompagnement -->
-        <div class="section">
-            <h2><i class="fas fa-hands-helping"></i> Votre accompagnement</h2>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">
-                Selon votre situation, vous bénéficiez de différents types d'accompagnement mis en place par l'Académie du Tourisme.
-            </p>
-            
-            <div class="welcome-grid">
-                <div class="welcome-card">
-                    <div class="icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Formateur à distance</h3>
-                    <p>Accompagnement pédagogique pour tous les apprenants</p>
-                </div>
-                
-                <div class="welcome-card">
-                    <div class="icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Référent de parcours</h3>
-                    <p>Pour la formation professionnelle continue</p>
-                </div>
-                
-                <div class="welcome-card">
-                    <div class="icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Chargé de suivi alternant</h3>
-                    <p>Pour les contrats d'apprentissage et de professionnalisation</p>
-                </div>
-            </div>
-        </div>
+                <!-- Section Accompagnement -->
+                <div class="section fade-in">
+                    <h2>Votre accompagnement personnalisé</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h3>Formateur à distance</h3>
+                            <p><strong>Pour tous les apprenants :</strong></p>
+                            <ul>
+                                <li>Entretiens individuels (min. 1 par CCP)</li>
+                                <li>Corrections sous 5 jours ouvrés</li>
+                                <li>Réponses messagerie sous 48h</li>
+                                <li>Visioconférences mensuelles</li>
+                                <li>Webinaires métier</li>
+                            </ul>
+                        </div>
 
-        <!-- Section Planning -->
-        <div class="section">
-            <h2><i class="fas fa-calendar-alt"></i> Planification de votre cursus</h2>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
-                Organiser les différentes étapes de votre parcours de formation est essentiel pour votre réussite.
-            </p>
-            
-            <div class="success-box">
-                <h3><i class="fas fa-lightbulb"></i> Conseil</h3>
-                <p>Planifiez votre travail à l'aide du planning organisationnel. Il sera la preuve de votre avancée auprès de votre organisme de financement et de votre entreprise.</p>
-            </div>
-            
-            <div class="info-box">
-                <h3><i class="fas fa-clock"></i> Échéance mensuelle</h3>
-                <p>Votre planning doit être mis à jour et déposé <strong>entre le 23 et le 25 de chaque mois</strong>. Votre formateur à distance en prendra connaissance.</p>
-            </div>
-        </div>
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Référent parcours apprenant</h3>
+                            <p><strong>Formation professionnelle continue :</strong></p>
+                            <ul>
+                                <li>3 appels téléphoniques minimum</li>
+                                <li>Animation des forums</li>
+                                <li>Contact avec tuteurs entreprise</li>
+                                <li>Veille métier et offres d'emploi</li>
+                            </ul>
+                        </div>
 
-        <!-- Section Mobile -->
-        <div class="section">
-            <h2><i class="fas fa-mobile-alt"></i> Votre plateforme sur smartphone</h2>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">
-                Vous pouvez accéder à votre plateforme de formation depuis l'application mobile Moodle !
-            </p>
-            
-            <div class="steps-timeline">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Téléchargement</h4>
-                        <p>Téléchargez l'application Moodle via Apple Store ou Play Store</p>
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Chargé de suivi alternant</h3>
+                            <p><strong>Contrats d'apprentissage/professionnalisation :</strong></p>
+                            <ul>
+                                <li>3 appels minimum durant le parcours</li>
+                                <li>Contact avec maîtres d'apprentissage</li>
+                                <li>Médiation en cas de difficultés</li>
+                                <li>Suivi de l'intégration entreprise</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Configuration</h4>
-                        <p>Saisissez l'URL : https://learning-tourism.academy/ ou scannez le QR code</p>
+
+                <!-- Section Organisation -->
+                <div class="section fade-in">
+                    <h2>Organisation de votre cursus</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3>Planning organisationnel</h3>
+                            <p>Document obligatoire à mettre à jour et déposer entre le 23 et 25 de chaque mois. Il constitue la preuve de votre avancée pour votre organisme de financement.</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Groupes de formation</h3>
+                            <p>15 groupes avec formateurs attitrés. Contact via messagerie individuelle, forums, visioconférences et agenda de rendez-vous.</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3>Module e-learning</h3>
+                            <p>Formation interactive pour maîtriser toutes les clés d'une organisation efficace en formation à distance.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Connexion</h4>
-                        <p>Utilisez vos identifiants habituels (nom utilisateur et mot de passe)</p>
+
+                <!-- Section Accessibilité -->
+                <div class="section fade-in">
+                    <h2>Accessibilité et inclusion</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <h3>Prise en compte du handicap</h3>
+                            <ul>
+                                <li>Formulaires d'aménagement d'épreuves</li>
+                                <li>Procédure nationale (délai 3 mois avant examen)</li>
+                                <li>Registres d'accessibilité des sites</li>
+                                <li>Versions accessibles des documents</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Alternance</h3>
+                            <ul>
+                                <li>Livret de l'alternance complet</li>
+                                <li>Guide apprentissage-handicap</li>
+                                <li>Critères d'assiduité obligatoires</li>
+                                <li>Droits, devoirs et avantages</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h3>Égalité et diversité</h3>
+                            <ul>
+                                <li>Formation "Mixité et carrière au féminin" (56 min)</li>
+                                <li>Formation "Réussir en entreprise en tant que femme" (1h27)</li>
+                                <li>Formation "Diversité en entreprise" (1h07)</li>
+                                <li>Prévention du harcèlement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section FAQ spécifique -->
+                <div class="section fade-in">
+                    <h2>Questions fréquentes sur l'organisation</h2>
+                    <div class="faq-container">
+                        <div class="card">
+                            <h3><i class="fas fa-question-circle" style="color: var(--accent); margin-right: 0.5rem;"></i>Comment contacter mon formateur ?</h3>
+                            <p>Plusieurs moyens : messagerie individuelle (identifiant formateur[X] RET), forums de discussion, rendez-vous collectifs planifiés, agenda personnel pour les rendez-vous individuels.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><i class="fas fa-question-circle" style="color: var(--accent); margin-right: 0.5rem;"></i>Quand ai-je mon premier rendez-vous ?</h3>
+                            <p>Dans les 7 jours suivant votre démarrage. Vous devez préparer un "Blason-Portrait chinois" et réserver un créneau dans l'agenda. C'est votre responsabilité de vous inscrire.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><i class="fas fa-question-circle" style="color: var(--accent); margin-right: 0.5rem;"></i>Comment demander un aménagement d'épreuve ?</h3>
+                            <p>Compléter le formulaire DGEFP, le faire remplir par un médecin, et l'envoyer à l'organisme organisateur au plus tard 3 mois avant la date d'examen.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><i class="fas fa-question-circle" style="color: var(--accent); margin-right: 0.5rem;"></i>Que faire si je rate un webinaire ?</h3>
+                            <p>Pas de problème ! Toutes les conférences et webinaires sont disponibles en replay dans l'onglet "mon espace d'échanges" pour un visionnage à votre convenance.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3><i class="fas fa-question-circle" style="color: var(--accent); margin-right: 0.5rem;"></i>À quelle fréquence dois-je mettre à jour mon planning ?</h3>
+                            <p>Le planning organisationnel doit être mis à jour et déposé mensuellement entre le 23 et le 25 de chaque mois. Votre formateur en prendra connaissance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Contacts importants -->
+                <div class="section fade-in">
+                    <h2>Contacts et ressources utiles</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Urgences et difficultés</h3>
+                            <p>En cas de problème avec votre maître d'apprentissage ou de difficultés d'intégration, contactez immédiatement votre chargé de suivi alternant qui jouera un rôle de médiateur.</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Harcèlement et discrimination</h3>
+                            <p>Ressources disponibles : guide pratique et juridique sur le harcèlement sexuel, site du Ministère pour le cyberharcèlement, formations dédiées.</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>Référentiels et évaluation</h3>
+                            <p>Consultez vos référentiels de formation et d'évaluation dans la rubrique "Informations pratiques" ainsi que tous les contacts importants.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </main>
 
-        <!-- Section CTA -->
-        <div class="cta-section">
-            <h3>Prêt à commencer votre aventure ?</h3>
-            <p>Explorez dès maintenant votre plateforme de formation et prenez rendez-vous avec votre formateur !</p>
-            <a href="#" class="cta-button">
-                <i class="fas fa-rocket"></i>
-                Commencer ma formation
-            </a>
-        </div>
-    </div>
+    <script src="../../js/app.js"></script>
 </body>
 </html>
